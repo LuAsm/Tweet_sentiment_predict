@@ -20,9 +20,9 @@ def health() -> Dict[str, str]:
     return {"health": "alive"}
 
 
-@app.post("/predict_cars")
-def predict_cars(inputs: List[tweet.Input]) -> Dict[str, List[Dict[str, float]]]:
+@app.post("/predict_tweet_Sentiment")
+def predict_tweet(inputs: List[tweet.Input]) -> Dict[str, List[Dict[str, float]]]:
     parsed_input = pd.DataFrame([i.dict() for i in inputs])
-    outputs: NDArray[np.float32] = tweet_model.predict(parsed_input)
+    outputs: NDArray[np.float32] = tweet_model.predict(parsed_input["Tweet"].values)
 
     return {"outputs": [{"Sentiment": i} for i in outputs.tolist()]}

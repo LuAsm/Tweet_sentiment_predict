@@ -1,8 +1,9 @@
 from pydantic import BaseModel
 
 
-class TweetInput(BaseModel):
+class Input(BaseModel):
     Tweet : str
-    polarity: float
+    
+    
     
     
