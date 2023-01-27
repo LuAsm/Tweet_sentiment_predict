@@ -20,6 +20,8 @@ scikit-learn = "^1.2.0"
 wordcloud = "^1.8.2.2"
 waitress = "^2.1.2"
 uvicorn = "^0.20.0"
+mysql = "^0.0.3"
+mysql-connector-python = "^8.0.32"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^0.991"
